@@ -1,0 +1,11 @@
+<launch>
+  <!--joy start node-->
+  <node pkg="joy" type="joy_node" name="joy_node" output="screen" />
+  <!--delta robot veloxity control node-->
+  <node pkg="minideltarobot_ros" type="startvelocitycontrol" name="startvelocitycontrol" output="screen" >
+    <param name="fixed_rate" type="int" value="50" />
+  </node>
+  <!--robot tf broadcaster node-->
+  <node pkg="minideltarobot_ros" type="deltarobot_tf_broadcaster" name="deltarobot_tf_broadcaster" output="screen" />
+  
+</launch>
